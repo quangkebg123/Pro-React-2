@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { CategoryNavigation } from "./CategoryNavigation";
 import { ProductList } from "./ProductList";
-// import { CartSummary } from "./CartSummary";
+import { CartSummary } from "./CartSummary";
 
 export class Shop extends Component {
 
     handleAddToCart = (...args) => {
+        console.log(args,'args');
         this.props.addToCart(...args);
         this.props.history.push("/shop/cart");
     }
@@ -15,7 +16,7 @@ export class Shop extends Component {
             <div className="row">
                 <div className="col bg-dark text-white">
                     <div className="navbar-brand">SPORTS STORE</div>
-                    {/* <CartSummary { ...this.props } /> */}
+                    <CartSummary { ...this.props } />
                 </div>
             </div>        
             <div className="row">
