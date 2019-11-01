@@ -6,9 +6,9 @@ export class ToggleLink extends Component {
         return <Route path={ this.props.to } exact={ this.props.exact }
                 children={ routeProps => {
             const baseClasses = this.props.className || "m-2 btn btn-block";
-            const activeClass = this.props.activeClass || "btn-primary";
+            const activeClass = this.props.activeClass || "btn-success";
             const inActiveClass = this.props.inActiveClass || "btn-secondary"
-
+            console.log(routeProps.match,'routeProps.match');        
             const combinedClasses = 
                 `${baseClasses} ${routeProps.match ? activeClass : inActiveClass}`
             

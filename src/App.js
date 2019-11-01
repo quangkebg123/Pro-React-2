@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect }
 import { ShopConnector } from "./shop/ShopConnector";
 export default class App extends Component {
   render() {
+	
     return <Provider store={SportsStoreDataStore}>
       	<Router>
        	 	<Switch>
