@@ -11,12 +11,12 @@ export class DataGetter extends Component {
     componentDidMount = () => this.getData();
 
     getData = () => {
-        console.log(this.props,'this.props');
+        console.log(this.props,'this.props ke');
         const dsData = this.props.products_params || {} ;
         const rtData = {
             _limit: this.props.pageSize || 5,
             _sort: this.props.sortKey || "name",
-            _page:  1,
+            _page: this.props.match.params.page || 1,
             category_like: (this.props.match.params.category || "") === "all" 
                 ? "" : this.props.match.params.category
         }        
