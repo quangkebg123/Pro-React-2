@@ -6,12 +6,12 @@ import { CartSummary } from "./CartSummary";
 export class Shop extends Component {
 
     handleAddToCart = (...args) => {
-        console.log(args,'args');
         this.props.addToCart(...args);
         this.props.history.push("/shop/cart");
     }
 
     render() {
+        console.log(this.props,'props render');
         return <div className="container-fluid">
             <div className="row">
                 <div className="col bg-dark text-white">

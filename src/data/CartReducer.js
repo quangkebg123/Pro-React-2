@@ -1,13 +1,13 @@
 import { ActionTypes } from "./Types";
 
 export const CartReducer = (storeData, action) => {
+    console.log(storeData,'CartReducer' );
     let newStore = { cart: [], cartItems: 0, cartPrice: 0, ...storeData }
     console.log(newStore,'newStore');
     switch(action.type) {
         case ActionTypes.CART_ADD: 
             const p = action.payload.product;
             const q = action.payload.quantity;
-            console.log('chay add');
             let existing = newStore.cart.find(item => item.product.id === p.id);
             if (existing) {
                 existing.quantity += q;
@@ -15,8 +15,7 @@ export const CartReducer = (storeData, action) => {
                 newStore.cart = [...newStore.cart, action.payload];
             }
             newStore.cartItems += q;
-            newStore.cartPrice += p.price * q;    
-            console.log(newStore,'cartReducer');        
+            newStore.cartPrice += p.price * q;      
             return newStore;
 
         case ActionTypes.CART_UPDATE:
@@ -30,7 +29,6 @@ export const CartReducer = (storeData, action) => {
                     return item;
                 }
             });
-            console.log(newStore,'CART_UPDATE');
             return newStore;
 
         case ActionTypes.CART_REMOVE:
