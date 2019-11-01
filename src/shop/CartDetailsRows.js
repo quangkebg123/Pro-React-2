@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export class CartDetailsRows extends Component {
 
     handleChange = (product, event) => {
-        this.props.updateQuantity(product, event.target.value);
+        this.props.updateQuantity(product, parseInt(event.target.value,10));
     }
 
     render() {

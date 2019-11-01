@@ -15,15 +15,20 @@ const mapStateToProps = (dataStore) => ({
 const mapDispatchToProps = {
     loadData, addToCart, updateCartQuantity, removeFromCart, clearCart
 }
-const filterProducts = (products = [], category) =>
-    (!category || category === "All")
-        ? products
-        : products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+const filterProducts = (products = [], category) => {
+    console.log(products,'product');
+    console.log()
+    return (!category || category === "All")
+    ? products
+    : products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+}
+    
 
 export const ShopConnector = connect(mapStateToProps, mapDispatchToProps)(
     class extends Component {
         
         render() {
+            
             return <Switch>
                 <Route path="/shop/products/:category?"
                     render={(routeProps) => 
