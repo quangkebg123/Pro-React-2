@@ -5,6 +5,7 @@ import { CartSummary } from "./CartSummary";
 import { ProductPageConnector } from "./ProductPageConnector";
 import { PaginationControls } from "../PaginationControls";
 
+
 const ProductPages = ProductPageConnector(PaginationControls);
 
 export class Shop extends Component {

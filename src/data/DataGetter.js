@@ -1,17 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { DataTypes } from "../data/Types";
 
 export class DataGetter extends Component {
 
     render() {
-        return <React.Fragment>{ this.props.children }</React.Fragment>
+        return <Fragment>{ this.props.children }</Fragment>
     }
 
     componentDidUpdate = () => this.getData();
     componentDidMount = () => this.getData();
 
     getData = () => {
-        console.log(this.props,'this.props ke');
         const dsData = this.props.products_params || {} ;
         const rtData = {
             _limit: this.props.pageSize || 5,

@@ -6,14 +6,11 @@ export class PaginationButtons extends Component {
         if (this.props.pageCount < 4) {
             return [...Array(this.props.pageCount + 1).keys()].slice(1);
         } else if (this.props.currentPage <= 4) {   
-            console.log('chay 1') ;
             return [1, 2, 3, 4, 5];
         } else  if (this.props.currentPage > this.props.pageCount - 4) {
-            console.log('chay 2') ;
             return [...Array(5).keys()].reverse()
                 .map(v => this.props.pageCount - v);
         } else {
-            console.log( this.props.currentPage ,'chay ne');
             return [this.props.currentPage -1, this.props.currentPage,
                 this.props.currentPage + 1];
         }        
