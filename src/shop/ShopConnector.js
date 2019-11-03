@@ -25,7 +25,7 @@ export const ShopConnector = connect(mapStateToProps, mapDispatchToProps)(
             return <Switch>
                 <Redirect from="/shop/products/:category"
                     to="/shop/products/:category/1" exact={ true } />
-                <Route path= { "/shop/products/:category?:page" }
+                <Route path= { "/shop/products/:category?/:page" }
                     render={(routeProps) => 
                         <DataGetter { ...this.props } { ...routeProps }>
                             <Shop {...this.props} {...routeProps} />
