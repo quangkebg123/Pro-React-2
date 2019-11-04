@@ -16,7 +16,6 @@ export class Shop extends Component {
     }
 
     render() {
-        console.log(this.props,'props render');
         return <div className="container-fluid">
             <div className="row">
                 <div className="col bg-dark text-white">
