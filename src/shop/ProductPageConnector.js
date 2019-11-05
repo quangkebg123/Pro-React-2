@@ -19,9 +19,8 @@ const mergeProps = (dataStore, actionCreators, router) =>{
         })
 }
 
-export const ProductPageConnector = (PageComponent) => {
-    console.log(PageComponent,'PageComponent');
-    return withRouter(connect(mapStateToProps, mapDispatchToProps, 
+export const ProductPageConnector = (PageComponent) => 
+    withRouter(connect(mapStateToProps, mapDispatchToProps, 
         mergeProps)(PageComponent))
-}
+
     

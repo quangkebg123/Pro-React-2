@@ -6,6 +6,7 @@ export class DataGetter extends Component {
     render() {
         return <Fragment>{ this.props.children }</Fragment>
     }
+    
 
     componentDidUpdate = () => this.getData();
     componentDidMount = () => this.getData();
