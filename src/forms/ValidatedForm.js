@@ -16,16 +16,16 @@ export class ValidatedForm extends Component {
         this.setState(state => {
             const newState = { ...state, validationErrors: {} } 
             Object.values(this.formElements).forEach(elem => {
-                console.log(elem,'elem');
                 if (!elem.checkValidity()) {               
                     newState.validationErrors[elem.name] = GetMessages(elem);
                 }
             })           
             return newState;
         }, () => {
+            console.log(this.formElements,'this.formElements');
             if (Object.keys(this.state.validationErrors).length === 0) {
                 const data =  Object.assign(...Object.entries(this.formElements)
-                    .map(e => ({[e[0]]: e[1].value})) )
+                    .map(e => ({[e[0]]: e[1].value})) );   
                 this.props.submitCallback(data);
             }
         });

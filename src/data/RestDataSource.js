@@ -7,12 +7,9 @@ export class RestDataSource {
         this.error_handler = err_handler || (() => {});
     }
 
-    GetData = (dataType, params) => {
+    GetData = (dataType, params) => 
         this.SendRequest("get", RestUrls[dataType], params);
-        console.log('chay get');
-    }
-        
-
+           
     StoreData = (dataType, data) => 
         this.SendRequest("post", RestUrls[dataType], {}, data);
 

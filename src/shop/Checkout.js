@@ -18,6 +18,7 @@ export class Checkout extends Component {
     handleSubmit = (formData) => {
         const order = { ...formData, products: this.props.cart.map(item => 
             ({  quantity: item.quantity, product_id: item.product.id})) }
+        console.log(order,'order');    
         this.props.placeOrder(order);
         this.props.clearCart();
         this.props.history.push("/shop/thanks");
