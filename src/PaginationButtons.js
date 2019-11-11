@@ -4,10 +4,13 @@ export class PaginationButtons extends Component {
 
     getPageNumbers = () => {
         if (this.props.pageCount < 4) {
+            console.log('nho hon 4');
+            console.log([...Array(this.props.pageCount + 1).keys()],'nho hon 4');
             return [...Array(this.props.pageCount + 1).keys()].slice(1);
         } else if (this.props.currentPage <= 4) {   
             return [1, 2, 3, 4, 5];
         } else  if (this.props.currentPage > this.props.pageCount - 4) {
+            console.log([...Array(5).keys()].reverse());
             return [...Array(5).keys()].reverse()
                 .map(v => this.props.pageCount - v);
         } else {
@@ -19,6 +22,7 @@ export class PaginationButtons extends Component {
     render() {
         const current = this.props.currentPage;
         const pageCount = this.props.pageCount;
+        console.log(pageCount,'pageCount');
         const navigate = this.props.navigate;
         return <React.Fragment>
             <button onClick={ () => navigate(current  - 1) }

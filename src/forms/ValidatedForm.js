@@ -33,6 +33,7 @@ export class ValidatedForm extends Component {
 
     registerRef = (element) => {
         if (element !== null) {
+            console.log(this.formElements,'this.formElements');
             this.formElements[element.name] = element;
         }
     }
